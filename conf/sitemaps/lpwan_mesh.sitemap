@@ -1,0 +1,66 @@
+sitemap lpwan_mesh label="LoRaWAN та Zigbee — практична 3.2" {
+  Frame label="Керування" {
+    Switch item=EmulationActive
+    Selection item=SystemCommand mappings=[NORMAL="Normal", INTERFERENCE="Interference", FAIL_ROUTER_2="Fail Router 2", RECOVER_ROUTER_2="Recover Router 2", JOIN_SENSOR="Join sensor", RESET="Reset"]
+    Text item=ProtocolTest
+    Text item=FailureAnalysis
+  }
+  Frame label="LoRaWAN Gateway / Network Server" {
+    Text item=GatewayStatus
+    Text item=GatewayLoad
+    Text item=GatewayTemperature
+    Text item=GatewayRssi
+    Text item=PacketsReceived
+    Text item=PacketsLost
+    Text item=ActiveDevices
+    Text item=DutyCycleUsed
+    Text item=AdrStatus
+    Text item=NetworkStatus
+    Text item=LoRaPackets
+  }
+  Frame label="LoRaWAN End Devices" {
+    Group item=gLoraSF7
+    Group item=gLoraSF9
+    Group item=gLoraSF12
+  }
+  Frame label="Zigbee Coordinator / Mesh" {
+    Text item=CoordinatorStatus
+    Text item=NetworkChannel
+    Text item=PanId
+    Text item=DeviceCount
+    Text item=NetworkHealth
+    Text item=ZigbeeTopology
+    Text item=Router2Online
+    Text item=Router1Lqi
+    Text item=Router2Lqi
+    Text item=Router3Lqi
+    Text item=Router1Routes
+    Text item=Router2Routes
+    Text item=Router3Routes
+  }
+  Frame label="Zigbee End Devices" {
+    Text item=Sensor1Temperature
+    Text item=Sensor1Humidity
+    Text item=Sensor1Battery
+    Text item=Sensor1Lqi
+    Text item=Sensor2Motion
+    Text item=Sensor2Battery
+    Text item=Sensor2Lqi
+    Text item=Sensor3LightLevel
+    Text item=Sensor3Battery
+    Text item=Sensor3Lqi
+    Text item=Sensor4Joined
+  }
+  Frame label="Protocol Comparison" {
+    Text item=LoRaAvgBattery
+    Text item=ZigbeeAvgBattery
+    Text item=LoRaAvgRssi
+    Text item=ZigbeeAvgLqi
+    Text item=LoRaDeliveryRate
+    Text item=ZigbeeDeliveryRate
+    Text item=LoRaAvgLatency
+    Text item=ZigbeeAvgLatency
+    Text item=ProtocolEfficiency
+    Text item=CoverageAnalysis
+  }
+}

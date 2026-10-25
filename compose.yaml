@@ -1,0 +1,36 @@
+
+services:
+  openhab:
+    image: openhab/openhab:5.2.1
+    container_name: openhab-lorawan-zigbee
+    restart: unless-stopped
+
+    environment:
+      USER_ID: "9001"
+      GROUP_ID: "9001"
+      CRYPTO_POLICY: unlimited
+      TZ: Europe/Kyiv
+      OPENHAB_HTTP_PORT: "8080"
+      OPENHAB_HTTPS_PORT: "8443"
+
+    ports:
+      - "8081:8080"
+      - "8444:8443"
+
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+
+    volumes:
+      - ./conf:/openhab/conf
+      - openhab_userdata:/openhab/userdata
+      - openhab_addons:/openhab/addons
+      - openhab_logs:/openhab/userdata/logs
+
+    stdin_open: true
+    tty: true
+
+volumes:
+  openhab_userdata:
+  openhab_addons:
+  openhab_logs:
